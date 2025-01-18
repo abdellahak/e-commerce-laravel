@@ -52,9 +52,15 @@ class CommandController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function status(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'status' => 'required|in:in progress,sent,delivered,return'
+        ]);
+        $command = Command::find($id);
+        $command->status = $validated['status'];
+        $command->save();
+        return redirect()->route('commands.index');
     }
 
     /**

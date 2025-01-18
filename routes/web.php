@@ -85,5 +85,6 @@ Route::get('/commands/edit/{id}', [CommandController::class, 'edit'])->name('com
 
 Route::put('/commands/{id}', [CommandController::class, 'update'])->name('commands.update');
 
-
 Route::delete('/commands/{id}', [CommandController::class, 'destroy'])->name('commands.destroy');
+
+Route::get('/commands/status/{id}', [CommandController::class, 'status'])->name('commands.status');
