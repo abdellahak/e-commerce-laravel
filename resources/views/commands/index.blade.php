@@ -66,23 +66,30 @@
               <td class="py-2 px-4">{{ $item->date }}</td>
               <td class="py-2 px-4">{{ $item->amount }}</td>
               <td class="py-2 px-4">
-                @if ($item->status == 'in progress')
-                  <span
-                    class="inline-block text-nowrap px-1 min-w-1/2 text-center bg-slate-800 dark:bg-slate-400 dark:text-slate-800 text-slate-400 p-1 rounded font-medium">•
-                    {{ $item->status }}</span>
+
+                <form action="{{ route('commands.status', $item->id) }}" class="flex items-center gap-2 statusForm">
+                  <select name="status" id="status"
+                    @if ($item->status == 'in progress') class="inline-block text-nowrap px-1 min-w-1/2 text-center bg-slate-800 dark:bg-slate-400 dark:text-slate-800 text-slate-400 p-1 rounded font-medium"
                 @elseif($item->status == 'sent')
-                  <span
-                    class="inline-block text-nowrap px-1 min-w-1/2 text-center bg-blue-600 bg-opacity-90 text-slate-900 p-1 rounded font-semibold">•
-                    {{ $item->status }}</span>
+                    class="inline-block text-nowrap px-1 min-w-1/2 text-center bg-blue-600 bg-opacity-90 text-slate-900 p-1 rounded font-semibold"
                 @elseif($item->status == 'delivered')
-                  <span
-                    class="inline-block text-nowrap px-1 min-w-1/2 text-center bg-green-400 text-green-900 p-1 rounded font-medium">•
-                    {{ $item->status }}</span>
+                    class="inline-block text-nowrap px-1 min-w-1/2 text-center bg-green-400 text-green-900 p-1 rounded font-medium"
                 @else
-                  <span
-                    class="inline-block text-nowrap px-1 min-w-1/2 text-center bg-red-300 text-red-900 p-1 rounded font-medium">•
-                    {{ $item->status }}</span>
-                @endif
+                    class="inline-block text-nowrap px-1 min-w-1/2 text-center bg-red-300 text-red-900 p-1 rounded font-medium" @endif>
+                    <option value="in progress" @if ($item->status == 'in progress') selected @endif
+                      class="text-center bg-slate-800 dark:bg-slate-400 dark:text-slate-800 text-slate-400 font-medium">• In
+                      progress</option>
+                    <option value="sent" @if ($item->status == 'sent') selected @endif
+                      class="text-center bg-slate-800 dark:bg-slate-400 dark:text-slate-800 text-slate-400 font-medium">
+                      • Sent</option>
+                    <option value="delivered" @if ($item->status == 'delivered') selected @endif
+                      class="text-center bg-slate-800 dark:bg-slate-400 dark:text-slate-800 text-slate-400 font-medium">
+                      • Delivered</option>
+                    <option value="return" @if ($item->status == 'return') selected @endif
+                      class="text-center bg-slate-800 dark:bg-slate-400 dark:text-slate-800 text-slate-400 font-medium">
+                      • Return</option>
+                  </select>
+                </form>
               </td>
               <td class="py-2 px-4 text-center">
                 <a href="{{ route('commands.show', $item->id) }}" class="text-blue-500 hover:underline" title="Details">
@@ -149,6 +156,14 @@
     const filterForm = document.getElementById('filterForm');
     filterForm.addEventListener('change', () => {
       filterForm.submit();
+    });
+
+    // change status code :
+    const statusForms = document.querySelectorAll('.statusForm');
+    statusForms.forEach(element => {
+      element.addEventListener('change', () => {
+        element.submit();
+      })
     });
   </script>
 @endsection
