@@ -74,6 +74,7 @@
                     class="inline-block text-nowrap px-1 min-w-1/2 text-center bg-blue-600 bg-opacity-90 text-slate-900 p-1 rounded font-semibold"
                 @elseif($item->status == 'delivered')
                     class="inline-block text-nowrap px-1 min-w-1/2 text-center bg-green-400 text-green-900 p-1 rounded font-medium"
+                    class="inline-block text-nowrap px-1 min-w-1/2 text-center bg-green-400 text-green-900 p-1 rounded font-medium"
                 @else
                     class="inline-block text-nowrap px-1 min-w-1/2 text-center bg-red-300 text-red-900 p-1 rounded font-medium" @endif>
                     <option value="in progress" @if ($item->status == 'in progress') selected @endif
