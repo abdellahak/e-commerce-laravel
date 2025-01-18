@@ -52,7 +52,7 @@
             <th class="py-2 px-4 text-start">Date</th>
             <th class="py-2 px-4 text-start">Amount</th>
             <th class="py-2 px-4 text-start">Status</th>
-            <th class="py-2 px-4 text-center" colspan="3">Actions</th>
+            <th class="py-2 px-4 text-center" colspan="2">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -96,12 +96,6 @@
               <td class="py-2 px-4 text-center">
                 <a href="{{ route('commands.show', $item->id) }}" class="text-blue-500 hover:underline" title="Details">
                   <i class="fa-solid fa-circle-info"></i>
-                </a>
-              </td>
-              <td class="py-2 px-4 text-center">
-                <a href="{{ route('commands.edit', $item->id) }}" class="text-yellow-500 hover:underline"
-                  title="Modifier">
-                  <i class="fa-solid fa-pen-to-square"></i>
                 </a>
               </td>
               <td class="py-2 px-4 text-center">

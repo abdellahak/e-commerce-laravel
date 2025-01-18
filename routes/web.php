@@ -14,7 +14,17 @@ Route::get('/products/data', [HomeController::class, 'getProducts'])->name('home
 
 // cart
 
-Route::get('/cart/{id}', [CartController::class, 'add'])->name('cart.add');
+Route::post('/cart/{id}', [CartController::class, 'add'])->name('cart.add');
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+
+Route::get('/cart/count', [CartController::class, 'count'])->name('cart.count');
+
+Route::get('/cart/increment/{id}', [CartController::class, 'increment'])->name('cart.increment');
+
+Route::get('/cart/decrement/{id}', [CartController::class, 'decrement'])->name('cart.decrement');
+
+Route::get('/cart/remove/{id}', [CartController::class, 'removeProduct'])->name('cart.remove');
 
 // categories
 

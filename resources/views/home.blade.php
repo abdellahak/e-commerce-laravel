@@ -25,22 +25,28 @@
   </script>
 </head>
 
-<body class="bg-gray-900 dark:bg-slate-200 text-gray-100 dark:text-black">
-  <nav class="fixed top-0 left-0 right-0 bg-gray-800 dark:bg-gray-100 dark:text-black shadow-lg z-50 w-full">
+<body class="bg-gray-900 dark:bg-slate-100 text-gray-100 dark:text-black">
+  <nav class="fixed top-0 left-0 right-0 bg-gray-800 dark:bg-gray-50 dark:text-black shadow-lg z-50 w-full ">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
-        <h1 class="text-2xl font-bold">
-          <i class="fa-solid fa-store mx-2"></i>
-          Moroccan Amazon
-        </h1>
+        <a href="{{ route('home') }}">
+          <h1 class="text-2xl font-bold">
+            <i class="fa-solid fa-store mx-2"></i>
+            Moroccan Amazon
+          </h1>
+        </a>
         <div class="flex items-center gap-4">
+          <button onclick="showSearch()"
+            class="dark:bg-gray-100 bg-gray-500 text-white dark:text-black rounded-full h-10 w-10 hover:bg-gray-700 dark:hover:bg-gray-300 block">
+            <i class="fa-solid fa-search"></i>
+          </button>
           <button onclick="toggleDarkMode()"
             class="dark:bg-gray-100 bg-gray-500 text-white dark:text-black rounded-full h-10 w-10 hover:bg-gray-700 dark:hover:bg-gray-300 block">
             <i class="fa-solid fa-moon"></i>
           </button>
-          <a href="" id="cartBtn" class="relative inline-block">
+          <a href="{{ route('cart.index') }}" id="cartBtn" class="relative inline-block">
             <span id="cartCount"
-              class="absolute -top-2 -right-2 bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">0</span>
+              class="absolute -top-2 -right-2 bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">{{ session('cart') ? array_sum(session('cart')) : 0 }}</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="9" cy="21" r="1" />
@@ -51,8 +57,33 @@
         </div>
       </div>
     </div>
+    {{-- search bar --}}
+    <div
+      class="bg-black text-white text-center py-2 absolute -top-full left-0 right-0 transition-all flex justify-center"
+      id="searchBar">
+      <form action=""class="flex justify-center w-1/2" id="searchForm">
+        <div class="relative w-full mx-10 h-10">
+          <input placeholder="Search..."
+            class="input shadow-lg border-gray-300 w-full px-2 py-2 rounded transition-all outline-none text-black"
+            name="search" type="search" />
+          <button>
+            <svg class="size-6 absolute top-2 right-2 text-gray-500" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                stroke-linejoin="round" stroke-linecap="round"></path>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
   </nav>
-
+  <div class="pt-20 bg-blue-600" id="quoteBar">
+    {{-- promotion quote --}}
+    <div class=" text-white text-center py-4">
+      <p class="text-lg font-semibold">Welcome to Moroccan Amazon! Enjoy exclusive deals and discounts on your favorite
+        products. Shop now and save big!</p>
+    </div>
+  </div>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
     <div id="products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       <!-- Products will be inserted here -->
@@ -64,7 +95,7 @@
     const productsContainer = document.getElementById('products');
     const cartCount = document.getElementById('cartCount');
 
-
+    // fetch products
     fetch("{{ route('home.products') }}", {
         method: 'GET',
         headers: {
@@ -73,14 +104,20 @@
       })
       .then(response => response.json())
       .then(data => {
-        products = data;
+        products = data.products;
         renderProducts();
+        updateCartCount();
       }).catch(error => {
         productsContainer.innerHTML = '<p class="text-red-500">Error loading products. Please try again later.</p>';
         console.error('Error fetching products:', error)
       });
 
+
+    // add to cart function
     function addToCart(productId) {
+      console.log(JSON.stringify({
+        id: productId
+      }));
       fetch(`{{ route('cart.add', '') }}/${productId}`, {
           method: 'POST',
           headers: {
@@ -92,15 +129,32 @@
         })
         .then(response => response.json())
         .then(data => {
-          alert(data.message);
+          cart = data.cart;
+          updateCartCount();
         }).catch(error => {
           console.error('Error fetching products:', error)
         });
     }
 
-    function renderProducts() {
-      productsContainer.innerHTML = products.map(product => `
-    <div class="bg-gray-800 border border-slate-700 dark:bg-slate-200 dark:text-black rounded-lg flex flex-col justify-between shadow-lg overflow-hidden transition-transform hover:scale-[1.02]">
+    // update cart count function 
+    function updateCartCount() {
+      fetch("{{ route('cart.count') }}", {
+          method: 'GET',
+          headers: {
+            "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+          }
+        })
+        .then(response => response.json())
+        .then(data => {
+          cartCount.textContent = data.quantity;
+        }).catch(error => {
+          console.error('Error fetching products:', error)
+        });
+    }
+
+    function renderProducts(data = products) {
+      productsContainer.innerHTML = data.map(product => `
+    <div class="bg-gray-800 border border-slate-700 dark:border-slate-200 dark:bg-slate-100 dark:text-black rounded-lg flex flex-col justify-between shadow-lg overflow-hidden transition-transform hover:scale-[1.02]">
       <a href="">
         <div class="h-64 overflow-hidden bg-white">
         <img
@@ -138,6 +192,36 @@
     </div>
     `).join('');
     }
+
+    function showSearch() {
+      const searchBar = document.getElementById('searchBar');
+      const quoteBar = document.getElementById('quoteBar');
+      if (searchBar.classList.contains('-top-full')) {
+        searchBar.classList.remove('-top-full');
+        quoteBar.classList.add('pt-32');
+        quoteBar.classList.remove('pt-20');
+      } else {
+        searchBar.classList.add('-top-full');
+        quoteBar.classList.add('pt-20');
+        quoteBar.classList.remove('pt-32');
+      }
+    }
+
+    const searchForm = document.getElementById('searchForm');
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+    })
+    searchForm.addEventListener('input', () => {
+      const search = searchForm.querySelector('input[name="search"]').value;
+      const filteredProducts = products.filter(product => product.name.toLowerCase().includes(search.toLowerCase()));
+      if (filteredProducts.length === 0) {
+        productsContainer.innerHTML =
+          '<p class="text-gray-400 text-center text-2xl w-full flex-1">No products found.</p>';
+      } else {
+        renderProducts(filteredProducts);
+      }
+    })
+    updateCartCount();
   </script>
 </body>
 

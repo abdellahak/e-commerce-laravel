@@ -34,7 +34,10 @@
 
         <div class="flex flex-col h-full justify-between">
           <div>
-            <h1 class="text-3xl my-2 p-4">Abde Store</h1>
+            <h1 class="text-2xl font-bold">
+              <i class="fa-solid fa-store mx-2"></i>
+              Moroccan Amazon
+            </h1>
             <ul class="flex flex-col">
               <li class="my-1">
                 <a href="{{ route('clients.index') }}"
@@ -66,10 +69,11 @@
               </li>
             </ul>
           </div>
-            <a href="https://github.com/abdellahak" target="_blank" class="flex items-center p-2 gap-2 pb-5 hover:bg-slate-700 dark:hover:bg-gray-300">
+          <a href="https://github.com/abdellahak" target="_blank"
+            class="flex items-center p-2 gap-2 pb-5 hover:bg-slate-700 dark:hover:bg-gray-300">
             <img src="{{ url('/storage/admin/images/my picture.png') }}" alt="" class="h-10 w-10 rounded-full">
             <p>Abdellah Khouden</p>
-            </a>
+          </a>
         </div>
       </div>
     </div>
