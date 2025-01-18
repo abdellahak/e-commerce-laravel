@@ -78,16 +78,17 @@
                 @else
                     class="inline-block text-nowrap px-1 min-w-1/2 text-center bg-red-300 text-red-900 p-1 rounded font-medium" @endif>
                     <option value="in progress" @if ($item->status == 'in progress') selected @endif
-                      class="text-center bg-slate-800 dark:bg-slate-400 dark:text-slate-800 text-slate-400 font-medium">• In
+                      class="text-start bg-slate-800 dark:bg-slate-400 dark:text-slate-800 text-slate-400 font-medium">•
+                      In
                       progress</option>
                     <option value="sent" @if ($item->status == 'sent') selected @endif
-                      class="text-center bg-slate-800 dark:bg-slate-400 dark:text-slate-800 text-slate-400 font-medium">
+                      class="text-start bg-slate-800 dark:bg-slate-400 dark:text-slate-800 text-slate-400 font-medium">
                       • Sent</option>
                     <option value="delivered" @if ($item->status == 'delivered') selected @endif
-                      class="text-center bg-slate-800 dark:bg-slate-400 dark:text-slate-800 text-slate-400 font-medium">
+                      class="text-start bg-slate-800 dark:bg-slate-400 dark:text-slate-800 text-slate-400 font-medium">
                       • Delivered</option>
                     <option value="return" @if ($item->status == 'return') selected @endif
-                      class="text-center bg-slate-800 dark:bg-slate-400 dark:text-slate-800 text-slate-400 font-medium">
+                      class="text-start bg-slate-800 dark:bg-slate-400 dark:text-slate-800 text-slate-400 font-medium">
                       • Return</option>
                   </select>
                 </form>

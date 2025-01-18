@@ -1,14 +1,20 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CommandController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/products/data', [HomeController::class, 'getProducts'])->name('home.products');
+
+// cart
+
+Route::get('/cart/{id}', [CartController::class, 'add'])->name('cart.add');
 
 // categories
 
