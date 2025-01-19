@@ -59,13 +59,14 @@
 
 
   <section class="antialiased md:py-16 pt-44 pb-16">
-    <div class="mx-auto max-w-screen-xl px-4 2xl:px-0 mt-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 2xl:px-0 mt-10 ">
       <h2 class="text-xl font-semibold sm:text-2xl">Shopping Cart</h2>
 
       <div class="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
-        <div class="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl flex flex-col   gap-2  " id="cartItems">
+        <div class="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl flex flex-col gap-2 " id="cartItems">
 
         </div>
+
         {{-- order summary --}}
         <div class="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
           <div
@@ -102,13 +103,13 @@
           </div>
 
           <a href="#"
-            class="flex w-full items-center justify-center rounded-lg dark:bg-slate-700 px-5 py-2.5 text-sm font-medium text-white dark:hover:bg-primary-800 focus:outline-none focus:ring-4 dark:focus:ring-primary-300 bg-slate-600 hover:bg-primary-700 focus:ring-primary-800">Proceed
+            class="flex w-full items-center justify-center rounded-lg dark:bg-blue-700 px-5 py-2.5 text-sm font-medium text-white dark:hover:bg-blue-800 focus:outline-none focus:ring-4 dark:focus:ring-primary-300 bg-blue-600 hover:bg-blue-700 focus:ring-primary-800">Proceed
             to Checkout</a>
 
           <div class="flex items-center justify-center gap-2">
             <span class="text-sm font-normal text-gray-500 dark:text-gray-400"> or </span>
             <a href="{{ route('home') }}"
-              class="inline-flex items-center gap-2 text-sm font-medium dark:text-slate-700 underline hover:no-underline text-white">
+              class="inline-flex items-center gap-2 text-sm font-medium dark:text-blue-700 underline hover:no-underline text-blue-600">
               Continue Shopping
               <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 24 24">
@@ -125,7 +126,7 @@
 
 
     {{-- other products --}}
-    <div class="hidden xl:mt-8 xl:block">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
       <h3 class="text-2xl font-semibold dark:text-gray-900 text-white">People also bought</h3>
       <div class="mt-6 grid grid-cols-3 gap-4 sm:mt-8">
         <div

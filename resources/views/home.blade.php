@@ -25,7 +25,7 @@
   </script>
 </head>
 
-<body class="bg-gray-900 dark:bg-slate-100 text-gray-100 dark:text-black">
+<body class="bg-gray-900 dark:bg-slate-100 text-gray-100 dark:text-black saturate-130">
   <nav class="fixed top-0 left-0 right-0 bg-gray-800 dark:bg-gray-50 dark:text-black shadow-lg z-50 w-full ">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
@@ -66,13 +66,6 @@
           <input placeholder="Search..."
             class="input shadow-lg border-gray-300 w-full px-2 py-2 rounded transition-all outline-none text-black"
             name="search" type="search" />
-          <button>
-            <svg class="size-6 absolute top-2 right-2 text-gray-500" stroke="currentColor" stroke-width="1.5"
-              viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                stroke-linejoin="round" stroke-linecap="round"></path>
-            </svg>
-          </button>
         </div>
       </form>
     </div>
