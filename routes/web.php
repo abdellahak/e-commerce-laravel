@@ -26,6 +26,8 @@ Route::get('/cart/decrement/{id}', [CartController::class, 'decrement'])->name('
 
 Route::get('/cart/remove/{id}', [CartController::class, 'removeProduct'])->name('cart.remove');
 
+Route::get('/cart/data', [CartController::class, 'getCartData'])->name('cart.data');
+
 // categories
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');

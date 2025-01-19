@@ -7,14 +7,17 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function index(Request $request){
+    public function index(){
+        return view('cart');
+    }
+
+    public function getCartData(Request $request){
         $cart = $request->session()->get('cart', []);
         $products = Product::whereIn('id', array_keys($cart))->get();
+        $productsSuggestion = Product::whereNotIn('id', array_keys($cart))->inRandomOrder()->limit(4)->get();
         $total = $this->calculateTotal();
-        if($request->ajax()){
-            return response()->json(['products' => $products, 'cart' => $cart, 'total' => $total]);
-        }
-        return view('cart', compact('products', 'cart', 'total'));
+        return response()->json(['products' => $products, 'cart' => $cart, 'total' => $total, 'productsSuggestion' => $productsSuggestion]);
+        
     }
 
     public function count(Request $request){
@@ -44,8 +47,9 @@ class CartController extends Controller
         }else{
             $cart[$id] = 1;
         }
+        $products = Product::whereIn('id', array_keys($cart))->get();
         $request->session()->put('cart', $cart);
-        return response()->json(['cart' => $cart]);
+        return response()->json(['cart' => $cart, 'products'=> $products]);
     }
 
 

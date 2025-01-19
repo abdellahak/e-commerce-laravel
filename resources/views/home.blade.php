@@ -78,7 +78,8 @@
     </div>
   </div>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
-    <div id="products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <h3 class="text-2xl font-semibold dark:text-gray-900 text-white">Find What You Love, Love What You Buy!</h3>
+    <div id="products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-6">
       <!-- Products will be inserted here -->
     </div>
   </main>

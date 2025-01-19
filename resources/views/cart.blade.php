@@ -128,147 +128,8 @@
     {{-- other products --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
       <h3 class="text-2xl font-semibold dark:text-gray-900 text-white">People also bought</h3>
-      <div class="mt-6 grid grid-cols-3 gap-4 sm:mt-8">
-        <div
-          class="space-y-6 overflow-hidden rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-          <a href="#" class="overflow-hidden rounded">
-            <img class="mx-auto h-44 w-44 dark:hidden"
-              src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg" alt="imac image" />
-            <img class="mx-auto hidden h-44 w-44 dark:block"
-              src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg" alt="imac image" />
-          </a>
-          <div>
-            <a href="#"
-              class="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">iMac
-              27”</a>
-            <p class="mt-2 text-base font-normal text-gray-500 dark:text-gray-400">This generation has some
-              improvements, including a longer continuous battery life.</p>
-          </div>
-          <div>
-            <p class="text-lg font-bold text-gray-900 dark:text-white">
-              <span class="line-through"> $399,99 </span>
-            </p>
-            <p class="text-lg font-bold leading-tight text-red-600 dark:text-red-500">$299</p>
-          </div>
-          <div class="mt-6 flex items-center gap-2.5">
-            <button data-tooltip-target="favourites-tooltip-1" type="button"
-              class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">
-              <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z"></path>
-              </svg>
-            </button>
-            <div id="favourites-tooltip-1" role="tooltip"
-              class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-              Add to favourites
-              <div class="tooltip-arrow" data-popper-arrow></div>
-            </div>
-            <button type="button"
-              class="inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium  text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-              <svg class="-ms-2 me-2 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7h-1M8 7h-.688M13 5v4m-2-2h4" />
-              </svg>
-              Add to cart
-            </button>
-          </div>
-        </div>
-        <div
-          class="space-y-6 overflow-hidden rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-          <a href="#" class="overflow-hidden rounded">
-            <img class="mx-auto h-44 w-44 dark:hidden"
-              src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ps5-light.svg" alt="imac image" />
-            <img class="mx-auto hidden h-44 w-44 dark:block"
-              src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ps5-dark.svg" alt="imac image" />
-          </a>
-          <div>
-            <a href="#"
-              class="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">Playstation
-              5</a>
-            <p class="mt-2 text-base font-normal text-gray-500 dark:text-gray-400">This generation has some
-              improvements, including a longer continuous battery life.</p>
-          </div>
-          <div>
-            <p class="text-lg font-bold text-gray-900 dark:text-white">
-              <span class="line-through"> $799,99 </span>
-            </p>
-            <p class="text-lg font-bold leading-tight text-red-600 dark:text-red-500">$499</p>
-          </div>
-          <div class="mt-6 flex items-center gap-2.5">
-            <button data-tooltip-target="favourites-tooltip-2" type="button"
-              class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">
-              <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z"></path>
-              </svg>
-            </button>
-            <div id="favourites-tooltip-2" role="tooltip"
-              class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-              Add to favourites
-              <div class="tooltip-arrow" data-popper-arrow></div>
-            </div>
-            <button type="button"
-              class="inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium  text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-              <svg class="-ms-2 me-2 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7h-1M8 7h-.688M13 5v4m-2-2h4" />
-              </svg>
-              Add to cart
-            </button>
-          </div>
-        </div>
-        <div
-          class="space-y-6 overflow-hidden rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-          <a href="#" class="overflow-hidden rounded">
-            <img class="mx-auto h-44 w-44 dark:hidden"
-              src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/apple-watch-light.svg" alt="imac image" />
-            <img class="mx-auto hidden h-44 w-44 dark:block"
-              src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/apple-watch-dark.svg" alt="imac image" />
-          </a>
-          <div>
-            <a href="#"
-              class="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">Apple
-              Watch
-              Series 8</a>
-            <p class="mt-2 text-base font-normal text-gray-500 dark:text-gray-400">This generation has some
-              improvements, including a longer continuous battery life.</p>
-          </div>
-          <div>
-            <p class="text-lg font-bold text-gray-900 dark:text-white">
-              <span class="line-through"> $1799,99 </span>
-            </p>
-            <p class="text-lg font-bold leading-tight text-red-600 dark:text-red-500">$1199</p>
-          </div>
-          <div class="mt-6 flex items-center gap-2.5">
-            <button data-tooltip-target="favourites-tooltip-3" type="button"
-              class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">
-              <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z"></path>
-              </svg>
-            </button>
-            <div id="favourites-tooltip-3" role="tooltip"
-              class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-              Add to favourites
-              <div class="tooltip-arrow" data-popper-arrow></div>
-            </div>
-
-            <button type="button"
-              class="inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium  text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-              <svg class="-ms-2 me-2 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7h-1M8 7h-.688M13 5v4m-2-2h4" />
-              </svg>
-              Add to cart
-            </button>
-          </div>
-        </div>
+      <div id="products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-6">
+        <!-- Products will be inserted here -->
       </div>
     </div>
     </div>
@@ -276,14 +137,17 @@
   <script>
     let cartProducts = [];
     let cart = [];
+    let productsSuggestions = [];
     const cartItems = document.getElementById('cartItems');
     const cartCount = document.getElementById('cartCount');
     const cartBtn = document.getElementById('cartBtn');
     const total = document.getElementById('total');
+    const productsContainer = document.getElementById('products');
+    let productsSuggestionsRendered = false;
     getData();
 
     function getData() {
-      fetch('{{ route('cart.index') }}', {
+      fetch('{{ route('cart.data') }}', {
           method: 'GET',
           headers: {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
@@ -294,8 +158,13 @@
         .then(data => {
           cartProducts = data.products;
           cart = data.cart;
+          productsSuggestions = data.productsSuggestion;
           total.textContent = `${data.total} MAD`;
           renderCartItems();
+          if(!productsSuggestionsRendered) {
+            renderProductsSuggestions();
+            productsSuggestionsRendered = true;
+          }
         });
     }
 
@@ -368,7 +237,7 @@
           <div class="space-y-6">
               <div
                 class="rounded-lg border dark:border-gray-200 dark:bg-white p-4 shadow-sm border-gray-700 bg-gray-800 md:p-6">
-                <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
+                <div class="space-y-4 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:space-y-0">
                   <a href="#" class="shrink-0 md:order-1">
                     <img class="h-20 w-20 object-contain bg-white" src="${product.image}"
                       alt="${product.name}" />
@@ -425,6 +294,73 @@
               </div>
             </div>  
         `).join('');
+    }
+
+    function renderProductsSuggestions(data = productsSuggestions) {
+      productsContainer.innerHTML = data.map(product => `
+    <div class="bg-gray-800 border border-slate-700 dark:border-slate-200 dark:bg-slate-100 dark:text-black rounded-lg flex flex-col justify-between shadow-lg overflow-hidden transition-transform hover:scale-[1.02]">
+      <a href="">
+        <div class="h-64 overflow-hidden bg-white">
+        <img
+          src="${product.image}"
+          alt="${product.name}"
+          class="w-full h-full object-contain p-4"
+        />
+        </div>
+      </a>
+      <div class="p-6">
+        <h3 class="text-lg font-semibold text-gray-100 dark:text-black mb-2 line-clamp-1">
+          ${product.name}
+        </h3>
+        <p class="text-gray-400 dark:text-gray-900 text-sm mb-4 line-clamp-2">
+          ${product.description?? ""}
+        </p>
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span class="ml-1 text-sm text-gray-400">
+              4/5 (300)
+            </span>
+          </div>
+          <span class="text-xl font-bold text-gray-100 dark:text-black">
+            ${Number(product.price).toFixed(2)} MAD
+          </span>
+        </div>
+        <button
+          onclick="addToCart(${product.id})"
+          class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+    `).join('');
+    }
+
+
+    // add to cart function
+    function addToCart(productId) {
+      console.log(JSON.stringify({
+        id: productId
+      }));
+      fetch(`{{ route('cart.add', '') }}/${productId}`, {
+          method: 'POST',
+          headers: {
+            "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+          },
+          body: JSON.stringify({
+            id: productId
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          cart = data.cart;
+          cartProducts = data.products;
+          updateCartCount();
+          renderCartItems();
+        }).catch(error => {
+          console.error('Error fetching products:', error)
+        });
     }
   </script>
 </body>
