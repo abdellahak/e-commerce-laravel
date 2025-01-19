@@ -1,15 +1,15 @@
 <?php
 
-use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CommandController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
 Route::get('/products/data', [HomeController::class, 'getProducts'])->name('home.products');
 
 // cart
@@ -27,6 +27,16 @@ Route::get('/cart/decrement/{id}', [CartController::class, 'decrement'])->name('
 Route::get('/cart/remove/{id}', [CartController::class, 'removeProduct'])->name('cart.remove');
 
 Route::get('/cart/data', [CartController::class, 'getCartData'])->name('cart.data');
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 // categories
 
@@ -106,3 +116,6 @@ Route::put('/commands/{id}', [CommandController::class, 'update'])->name('comman
 Route::delete('/commands/{id}', [CommandController::class, 'destroy'])->name('commands.destroy');
 
 Route::get('/commands/status/{id}', [CommandController::class, 'status'])->name('commands.status');
+});
+
+require __DIR__.'/auth.php';
